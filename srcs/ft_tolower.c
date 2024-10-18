@@ -6,13 +6,15 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 09:00:53 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/07 20:57:16 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:29:38 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	if ((c <= 'Z') && (c >= 'A' ))
-		c += 32;
+	if (c > 64 && c < 91)
+		return (c + 32);
 	return (c);
 }

@@ -6,13 +6,15 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 14:45:52 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/09 14:22:56 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:26:50 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

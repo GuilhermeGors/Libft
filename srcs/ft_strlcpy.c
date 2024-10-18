@@ -6,18 +6,18 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 12:41:37 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/07 16:22:16 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:53:16 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dest, char *src, int size)
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	int	index;
+	unsigned int	index;
 
 	index = 0;
 	if (size > 0)
 	{
-		while (src[index] && index < (size -1))
+		while (src[index] && index < (size - 1))
 		{
 			dest[index] = src[index];
 			index++;
@@ -28,3 +28,19 @@ int	ft_strlcpy(char *dest, char *src, int size)
 		index++;
 	return (index);
 }
+
+/*#include <stdio.h>
+
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
+
+int	main(void)
+{
+	char	src[] = "Hello, World!";
+	char	dest[20];
+	unsigned int	result;
+
+	result = ft_strlcpy(dest, src, sizeof(dest));
+	printf("Destino: %s\n", dest);
+	printf("Tamanho da origem: %u\n", result);
+	return (0);
+}*/

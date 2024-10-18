@@ -1,40 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 04:26:33 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/17 11:16:41 by gugomes-         ###   ########.fr       */
+/*   Created: 2024/10/14 15:30:06 by gugomes-          #+#    #+#             */
+/*   Updated: 2024/10/17 12:18:08 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
-
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	int test_chars[] = {65, 128, 0, 127, -1, 200};
-	size_t i;
+	t_list	*list;
+	t_list	*new1;
+	t_list	*new2;
+	t_list	*new3;
 
-	printf("Test ft_isascii:\n");
-	for (i = 0; i < sizeof(test_chars) / sizeof(test_chars[0]); i++)
-	{
-		if (ft_isascii(test_chars[i]))
-			printf("%d is a ASCII.\n", test_chars[i]);
-		else
-			printf("%d is not a ASCII.\n", test_chars[i]);
-	}
+	new1 = ft_lstnew("First");
+	new2 = ft_lstnew("Second");
+	new3 = ft_lstnew("Third");
+
+	new1->next = new2;
+	new2->next = new3;
+
+	list = new1;
+
+	print_last(list);
+	list = NULL;
+	print_last(list);
+
+	free(new1);
+	free(new2);
+	free(new3);
 
 	return (0);
-}*/
+}
+*/

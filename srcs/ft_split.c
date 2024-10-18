@@ -25,7 +25,7 @@ int	count_words(const char *s, char c)
 			count++;
 		i++;
 	}
-	return (count);
+		return (count);
 }
 
 char	*copy_word(const char *s, int word_len)
@@ -45,15 +45,16 @@ char	*copy_word(const char *s, int word_len)
 	word[word_len] = '\0';
 	return (word);
 }
-void	free_strarr(char **strarr, int i)
-{
-	while (i >= 0)
-	{
-		free(strarr[i]);
-		i--;
-	}
-	free(strarr);
-}
+// void	free_strarr(char **strarr, int i)
+// {
+// 	while (i >= 0)
+// 	{
+// 		free(strarr[i]);
+// 		i--;
+// 	}
+// 	free(strarr);
+// }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strarr;

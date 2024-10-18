@@ -6,7 +6,7 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 02:58:39 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/08 03:43:10 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/15 15:39:00 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 #include <stdio.h>
 
 int main() {
-    const char *big = "Hello, World!";
-    const char *little = "World";
+    const char *big = "aaabcabcd";
+    const char *little = "aabc";
     size_t len = 12;
 
     char *result = ft_strnstr(big, little, len);
     if (result) {
-        printf("Substring encontrada: %s\n", result);
+        printf("\nSubstring encontrada: %s\n", result);
     } else {
         printf("Substring não encontrada.\n");
     }

@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 04:26:33 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/17 11:16:41 by gugomes-         ###   ########.fr       */
+/*   Created: 2024/10/15 14:42:16 by gugomes-          #+#    #+#             */
+/*   Updated: 2024/10/18 17:22:50 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
 /*
 #include <stdio.h>
 
-int	main(void)
+void print_content(void *content)
 {
-	int test_chars[] = {65, 128, 0, 127, -1, 200};
-	size_t i;
+    printf("%s\n", (char *)content);
+}
 
-	printf("Test ft_isascii:\n");
-	for (i = 0; i < sizeof(test_chars) / sizeof(test_chars[0]); i++)
-	{
-		if (ft_isascii(test_chars[i]))
-			printf("%d is a ASCII.\n", test_chars[i]);
-		else
-			printf("%d is not a ASCII.\n", test_chars[i]);
-	}
+int main(void)
+{
+    t_list *head = ft_lstnew("Node 1");
+    t_list *node2 = ft_lstnew("Node 2");
+    t_list *node3 = ft_lstnew("Node 3");
 
-	return (0);
+    ft_lstadd_back(&head, node2);
+    ft_lstadd_back(&head, node3);
+
+    ft_lstiter(head, print_content);
+
+    return 0;
 }*/

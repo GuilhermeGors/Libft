@@ -6,15 +6,15 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 09:00:53 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/12 02:21:23 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:29:05 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(char c)
+int	ft_toupper(int c)
 {
-	if ((c <= 'z') && (c >= 'a' ))
-		c -= 32;
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	return (c);
 }

@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/12 02:42:57 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/18 17:25:43 by gugomes-         ###   ########.fr       */
+/*   Created: 2024/10/14 15:25:55 by gugomes-          #+#    #+#             */
+/*   Updated: 2024/10/18 17:24:47 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	char	digit;
+	int	count;
 
-	if (n == -2147483648)
+	count = 0;
+	while (lst)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		count++;
+		lst = lst->next;
 	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	digit = (n % 10) + '0';
-	write(fd, &digit, 1);
+	return (count);
 }
-
 /*
-#include <stdio.h>
+#include <stdio.h
 
 int main(void)
 {
-    int number = -12345;
+    t_list *list = NULL;
+    
+    int a = 1, b = 2, c = 3;
+    ft_lstadd_back(&list, ft_lstnew(&a));
+    ft_lstadd_back(&list, ft_lstnew(&b));
+    ft_lstadd_back(&list, ft_lstnew(&c));
 
-    ft_putnbr_fd(number, 1);
-
+    int size = ft_lstsize(list);
+    
+    printf("list size: %d\n", size);
+    ft_lstclear(&list, free);
+    
     return 0;
-}
-
-*/
+}*/

@@ -1,40 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 09:05:20 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/17 14:00:30 by gugomes-         ###   ########.fr       */
+/*   Created: 2024/10/14 13:35:32 by gugomes-          #+#    #+#             */
+/*   Updated: 2024/10/18 17:19:52 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	if (new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
 /*
+#include "stdio.h"
 
-#include <stdio.h>
+void	print_list(t_list *lst)
+{
+	while (lst)
+	{
+		printf("%s -> ", (char *)lst->content);
+		lst = lst->next;
+	}
+	printf("NULL\n");
+}
 
 int	main(void)
 {
-	int test_chars[] = {'0', '5', '9', 'a', 'Z', 47, 58};
-	size_t i;
+	t_list	*list = NULL;
+	t_list	*new1;
+	t_list	*new2;
 
-	printf("Test ft_isdigit:\n");
-	for (i = 0; i < sizeof(test_chars) / sizeof(test_chars[0]); i++)
-	{
-		if (ft_isdigit(test_chars[i]))
-			printf("%c is a digit.\n", test_chars[i]);
-		else
-			printf("%c is not a dígito.\n", test_chars[i]);
-	}
+	new1 = ft_lstnew("Second");
+	new2 = ft_lstnew("First");
+
+	ft_lstadd_front(&list, new1);
+	ft_lstadd_front(&list, new2);
+
+	print_list(list);
 
 	return (0);
 }*/

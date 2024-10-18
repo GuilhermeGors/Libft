@@ -6,7 +6,7 @@
 /*   By: gugomes- <gugomes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 01:26:28 by gugomes-          #+#    #+#             */
-/*   Updated: 2024/10/08 01:54:58 by gugomes-         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:04:48 by gugomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last;
 
-	last = 0;
+	last = NULL;
 	while (*s)
 	{
 		if (*s == (char)c)
 			last = s;
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
 	return ((char *)last);
 }
